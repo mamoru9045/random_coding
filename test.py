@@ -44,4 +44,11 @@ def randam_sort():
                 ans_lst.append(picked_num)
                 picked_lst[0].remove(picked_num)
     print(*ans_lst[1:])
-randam_sort()
+    return ans_lst[1:]
+    
+def main():
+    N=input()
+    lst=random_sort(N)
+    
+if __name__ == "__main__":
+    main()
