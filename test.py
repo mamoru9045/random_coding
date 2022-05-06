@@ -8,8 +8,8 @@ def LstInt(): return list(map(int, sys.stdin.readline().rstrip().split()))
 def LstStr(): return list(sys.stdin.readline().rstrip().split())
 
 """
-入力例
-10
+入力例(総数とグループ数)
+10 3
 1 8 9 2
 3 4 5
 6 7 8
@@ -17,9 +17,8 @@ def LstStr(): return list(sys.stdin.readline().rstrip().split())
 """
 
 
-def randam_sort(N):
+def randam_sort(N,group_num):
     lst = [LstInt() for i in range(group_num)]
-     group_num = len(lst)
     random_lst_copy = lst.copy()
     random_list = []
     ans_lst = [-1]
@@ -54,8 +53,8 @@ def randam_sort(N):
 
 
 def main():
-    N = Int()
-    lst = randam_sort(N)
+    N,Group_num = map(int,input().split())
+    lst = randam_sort(N,Group_num)
 
 
 if __name__ == "__main__":
