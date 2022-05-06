@@ -18,8 +18,8 @@ def LstStr(): return list(sys.stdin.readline().rstrip().split())
 
 
 def randam_sort(N):
-    group_num = 3
     lst = [LstInt() for i in range(group_num)]
+     group_num = len(lst)
     random_lst_copy = lst.copy()
     random_list = []
     ans_lst = [-1]
