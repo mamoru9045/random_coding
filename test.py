@@ -10,10 +10,10 @@ def LstStr(): return list(sys.stdin.readline().rstrip().split())
 """
 入力例(総数とグループ数)
 10 3
-1 8 9 2
+1 10 9 2
 3 4 5
 6 7 8
-⇛5 6 9 3 8 4 1 7 2
+⇛5 6 9 3 8 10 4 1 7 2
 """
 
 
