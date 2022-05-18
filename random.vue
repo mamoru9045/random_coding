@@ -27,7 +27,7 @@ export default {
             var shuffled = GROUP_LISTS[i].slice();
             random_list.push(this.shuffle(shuffled))
             }
-        while(ans_list.length<10){
+        while(ans_list.length<11){
             var picked_index = this.ProbabilisticChoice(random_list);
             //  前回ans_listに入れた数字の群(リスト)を記録する。(群が連続することは許されない)
             var pre_picked_list = [];
