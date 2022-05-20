@@ -33,6 +33,7 @@ export default {
         var ans_list = [];
         ans_list.push(-1)
         var random_list = [];
+        var picked_num = 0;
         // 各群をシャッフル
         for(let i=0;i<GROUP_LISTS.length;i++){
             var shuffled = GROUP_LISTS[i].slice();
@@ -48,7 +49,27 @@ export default {
                     pre_picked_list=l
                 }}
 
-            var picked_num = random_list[picked_index][Math.floor(Math.random() * random_list[picked_index].length)];
+            // 強制的に選ぶ必要がある群があるか判定する
+            var max_list = []
+            var max_list_num = 0;
+            var _picked_index = 0;
+            for(let i=0;i<random_list.length;i++){
+                if(max_list_num < random_list[i].length){
+                    max_list_num = random_list[i].length
+                    max_list = random_list[i]
+                    _picked_index = i
+                }
+            }
+
+            if((10-ans_list.length)< 2*max_list_num){
+                //最も数の多い群から数字を取得
+                picked_num = max_list[Math.floor(Math.random() * max_list.length)];
+                picked_index = _picked_index
+            }else{
+                //ランダムな群から数字を取得
+                picked_num = random_list[picked_index][Math.floor(Math.random() * random_list[picked_index].length)];   
+            }
+
             if(pre_picked_list.includes(picked_num)){
                 if(ans_list.length == 10){
                     // 無限ループに入る
